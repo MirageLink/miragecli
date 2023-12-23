@@ -1,0 +1,19 @@
+{
+  "welcome": {
+    "english": "hello!",
+    "uwu": "hewwo :3"
+  },
+  "missing_config_file": {
+    "english": "mirage cannot find your config file",
+    "uwu": ";-; i cant find ur configy wonfigy"
+  },
+  "server_down": {
+    "english": "could not communicate with host",
+    "uwu": "seems like the servers are down, its just me and you :3"
+  },
+  "fatal_error":{
+  "english": "somehow your executable is broken. please contact echo",
+    "uwu": "oopsie woopsie! uwu we made a fuckie wuckie! the code monkeys at our head quarters are working VERY HAWD to fix this"
+
+}
+}
