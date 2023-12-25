@@ -1,6 +1,7 @@
 package main
 
 import (
+	_interface "main/interface"
 	"main/utils"
 	"os"
 )
@@ -8,9 +9,8 @@ import (
 var Args = os.Args[1:]
 
 func main() {
+	if len(Args) == 0 {
+		_interface.Start()
+	}
 	utils.ParseArgs(Args)
-	//if !utils.IsServerUp() {
-	//	guh, guh2 := lang.GetMessage("gun", "uwu")
-	//	fmt.Println(guh, guh2)
-	//}
 }

@@ -3,7 +3,6 @@ package lang
 import (
 	"embed"
 	"encoding/json"
-	"fmt"
 )
 
 //go:embed messages.json
@@ -12,29 +11,29 @@ var content embed.FS
 // GetMessage
 //
 // will return messageType if it cannot find the specified provided argument.
-func GetMessage(messageType, language string) (string, error) {
+func GetMessage(messageType, language string) string {
 
 	file, err := content.Open("messages.json")
 	if err != nil {
-		return "", fmt.Errorf("error opening file: %w", err)
+		return ""
 	}
 	defer file.Close()
 
 	var data map[string]map[string]string
 	decoder := json.NewDecoder(file)
 	if err := decoder.Decode(&data); err != nil {
-		return "", fmt.Errorf("error decoding JSON: %w", err)
+		return ""
 	}
 
 	languageMessages, exists := data[messageType]
 	if !exists {
-		return messageType, nil
+		return messageType
 	}
 
 	message, exists := languageMessages[language]
 	if !exists {
-		return "", fmt.Errorf("unsupported language: %s", language)
+		return ""
 	}
 
-	return message, nil
+	return message
 }
