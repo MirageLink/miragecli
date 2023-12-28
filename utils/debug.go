@@ -11,5 +11,8 @@ func Debug(Args []string) {
 	case "sendmessage":
 		fmt.Println(lang.GetMessage(Args[1], Args[2]))
 		os.Exit(0)
+	case "getconf":
+		fmt.Println(Getfromconfig(Args[1]))
 	}
+
 }

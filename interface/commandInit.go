@@ -2,6 +2,7 @@ package _interface
 
 import (
 	"main/lang"
+	"main/utils"
 	"strings"
 )
 
@@ -29,5 +30,5 @@ func (c *Commands) ExecuteCommand(name string, args []string) string {
 	if commandFunc, exists := c.commandMap[strings.ToLower(name)]; exists {
 		return commandFunc(args)
 	}
-	return lang.GetMessage("unknown_command", "uwu") + ": " + name
+	return lang.GetMessage("unknown_command", utils.Getfromconfig("lang")) + ": " + name
 }

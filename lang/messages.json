@@ -18,6 +18,9 @@
   "fatal_error":{
   "english": "somehow your executable is broken. please contact echo",
     "uwu": "oopsie woopsie! uwu we made a fuckie wuckie! the code monkeys at our head quarters are working VERY HAWD to fix this"
-
-}
+},
+  "warn_no_conf_dir": {
+    "english": "no config folder was found. creating one...",
+    "uwu": "no config folder for me ;-; im making one"
+  }
 }
